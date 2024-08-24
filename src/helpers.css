@@ -1,0 +1,93 @@
+.flex {
+  display: flex;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gap {
+  gap: 16rem;
+}
+.gap-2 {
+  gap: 32rem;
+}
+.space-y-2 {
+  margin-top: 24rem;
+  margin-bottom: 24rem;
+}
+h1 {
+  font-size: 32rem;
+  line-height: 1.1;
+}
+h2 {
+  font-size: 24rem;
+  line-height: 1.1;
+}
+h3 {
+  font-size: 20rem;
+  line-height: 1.1;
+}
+h4 {
+  font-size: 16rem;
+  line-height: 1.1;
+}
+h5 {
+  font-size: 14rem;
+  line-height: 1.1;
+}
+h6 {
+  font-size: 12rem;
+  line-height: 1.1;
+}
+p {
+  font-size: 16rem;
+  line-height: 1.5;
+}
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+.button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 6rem 20rem;
+  font-size: 16rem;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.button:hover {
+  border-color: #646cff;
+}
+.button:focus,
+.button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  .button {
+    background-color: #f9f9f9;
+  }
+}

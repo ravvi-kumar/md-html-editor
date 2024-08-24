@@ -1,0 +1,41 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.editor-container,
+.preview-container {
+  padding: 20px;
+  flex-grow: 1;
+}
+.controls {
+  margin-bottom: 10px;
+}
+textarea {
+  min-width: 300px;
+  width: 100%;
+  min-height: calc(min(100vh, 800px) - 200px);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  font-family: monospace;
+}
+.preview {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  min-width: 300px;
+  width: 100%;
+  flex-grow: 1;
+  min-height: calc(min(100vh, 800px) - 200px);
+  overflow: auto;
+}
