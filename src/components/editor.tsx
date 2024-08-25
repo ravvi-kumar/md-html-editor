@@ -1,16 +1,15 @@
 import DOMPurify from "dompurify";
 import { marked } from "marked";
 import React from "react";
-import TurndownService from "turndown";
 
 import "./editor.css";
 import Preview from "./preview";
 import useLocalStorage from "../hooks/useLocalStorage";
+import { htmlToMarkdown, markdownToHtml } from "../helpers/convert";
 
 type Mode = "markdown" | "html";
 
 const initialText = `# Hello World \n\nThis is a sample text.`;
-const turndownService = new TurndownService();
 
 function Editor() {
   const [text, setText] = useLocalStorage("text", initialText);
@@ -19,17 +18,11 @@ function Editor() {
   React.useEffect(() => {
     (async () => {
       if (mode === "html") {
-        const html = await marked.parse(text);
+        const html = markdownToHtml(text);
         setText(html);
       } else {
-        const md = turndownService.turndown(text);
-        const nextMd = turndownService.turndown(md);
-        // #NOTE: checking if the text starts with "/" means that it's a already in markdown format
-        if (nextMd.startsWith("\\") || nextMd === md) {
-          setText(text);
-        } else {
-          setText(md);
-        }
+        const md = htmlToMarkdown(text);
+        setText(md);
       }
     })();
   }, [mode]);
