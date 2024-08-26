@@ -8,7 +8,7 @@ import { htmlToMarkdown, markdownToHtml } from "../helpers/convert";
 
 type Mode = "markdown" | "html";
 
-const initialText = `# Hello World \n\nThis is a sample text.`;
+const initialText = `# Hello World \n\nThis is a sample text. \n\n![](https://picsum.photos/200/300)`;
 
 function Editor() {
   const [text, setText] = useLocalStorage("text", initialText);
