@@ -1,5 +1,4 @@
 import DOMPurify from "dompurify";
-import { marked } from "marked";
 import React from "react";
 
 import "./editor.css";
@@ -37,7 +36,7 @@ function Editor() {
 
   const sanitizedHTML = React.useMemo(() => {
     if (mode === "markdown") {
-      const html = marked.parse(text);
+      const html = markdownToHtml(text);
       return DOMPurify.sanitize(html as string);
     } else {
       return DOMPurify.sanitize(text);
@@ -60,7 +59,11 @@ function Editor() {
           />
         </div>
         <div className="preview-container">
-          <Preview sanitizedHTML={sanitizedHTML} />
+          <Preview
+            sanitizedHTML={sanitizedHTML}
+            mode={mode}
+            setText={setText}
+          />
         </div>
       </div>
     </div>
