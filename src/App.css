@@ -1,24 +1,24 @@
 * {
   box-sizing: border-box;
 }
-html {
+/* html {
   font-size: 6.25%;
-}
+} */
 
 #root {
-  max-width: calc(min(1280px, 100vw - 2rem));
+  max-width: calc(min(1280px, 100vw - 2px));
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2px;
   min-height: 100vh;
 }
 
 .logo {
-  height: 34rem;
+  height: 34px;
   will-change: filter;
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 10rem #646cffaa);
+  filter: drop-shadow(0 0 10px #646cffaa);
 }
 
 nav {
